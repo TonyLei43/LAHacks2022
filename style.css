@@ -1,0 +1,94 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://images.unsplash.com/photo-1596868801151-5d26796963b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80://images.unsplash.com/photo-1490735891913-40897cdaafd1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title{
+  display: grid;
+  justify-content: center;
+  position: absolute;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 40px;
+  color: #f8bf22dc;
+  top: 10%;
+  left: 37%;
+}
+
+.stack {
+  width: 600px;
+  height: 600px;
+  position: relative;
+}
+
+.card {
+  width: 80%;
+  min-height: 50%;
+  background-color: rgb(190, 159, 240);
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+  font-family: sans-serif;
+  font-size: 26px;
+  color: #00000080;
+  box-shadow: 0 5px 10px 0 #00000040;
+  transition: transform 100ms;
+}
+
+.card:nth-last-child(n+4){
+  --diff:calc(-50%+30px);
+  transform: translate(-50%,var(--diff) scale=.90);
+  box-shadow: 0 0 1px 1px #00000003;
+}
+
+.card:nth-last-child(3){
+  --diff:calc(-50%+15px);
+  transform: translate(-50%,var(--diff) scale=.95);
+  }
+
+.card:nth-last-child(2){
+  --diff:calc(-50%);
+  transform: translate(-50%,var(--diff) scale=.1);
+
+}
+.card:nth-last-child(1){
+  --diff :calc(-50%+15px);
+  transform: translate(-50%,var(--diff) scale=1.05);
+
+}
+
+
+@keyframes next_event{
+  50%{
+    transform: translate(-50%, calc(var(--diff) - 250px)) scale(0.85) rotate(-3deg);
+    animation-timing-function: ease-in;
+  }
+  100%{
+    transform: translate(-50%, calc(var(--diff) - 15px)) scale(0.85);
+    z-index: -1;
+  }
+}
